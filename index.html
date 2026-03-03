@@ -12,9 +12,7 @@ body{
   background:#0a0a0a;
   color:#f5f5f5;
 }
-:root{
-  --gold:#d4af37;
-}
+:root{--gold:#d4af37}
 
 /* HERO */
 .hero{
@@ -25,48 +23,52 @@ body{
 }
 
 /* INFO */
-.info-section{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 20px;
+.info{
   text-align:center;
+  padding:30px 20px;
 }
-.info-section h2{color:var(--gold);}
+.info h2{color:var(--gold)}
 
-/* MOVING GALLERY */
-.slider{
-  overflow:hidden;
+/* STATIC GALLERY */
+.gallery{
   max-width:1100px;
   margin:30px auto;
-  border-top:1px solid rgba(212,175,55,.4);
-  border-bottom:1px solid rgba(212,175,55,.4);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
 }
-.track{
-  display:flex;
-  width:max-content;
-  animation:moveLeft 35s linear infinite;
-}
-.track.reverse{
-  animation:moveRight 35s linear infinite;
-}
-.track img{
-  width:260px;
-  height:220px;
+.gallery img{
+  width:100%;
+  height:240px;
   object-fit:cover;
-  margin:10px;
   border:2px solid rgba(212,175,55,.6);
-  border-radius:6px;
   box-shadow:0 0 12px rgba(212,175,55,.25);
 }
 
-/* ANIMATIONS */
-@keyframes moveLeft{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
+/* MOVING TWO IMAGES */
+.moving-wrap{
+  overflow:hidden;
+  max-width:1100px;
+  margin:40px auto;
+  border-top:1px solid rgba(212,175,55,.4);
+  border-bottom:1px solid rgba(212,175,55,.4);
 }
-@keyframes moveRight{
-  from{transform:translateX(-50%);}
-  to{transform:translateX(0);}
+.moving-track{
+  display:flex;
+  width:fit-content;
+  animation:slide 18s ease-in-out infinite alternate;
+}
+.moving-track img{
+  width:50vw;
+  max-width:520px;
+  height:260px;
+  object-fit:cover;
+  margin:10px;
+  border:2px solid var(--gold);
+}
+@keyframes slide{
+  from{transform:translateX(0)}
+  to{transform:translateX(-40%)}
 }
 
 /* FORM */
@@ -77,9 +79,9 @@ body{
   border:1px solid rgba(212,175,55,.5);
   background:#050505;
 }
-.form-box h2{color:var(--gold);text-align:center;}
-label{display:block;margin-top:15px;}
-input,select,textarea{
+.form-box h2{color:var(--gold);text-align:center}
+label{display:block;margin-top:15px}
+input,select{
   width:100%;
   padding:12px;
   background:#0c0c0c;
@@ -87,8 +89,8 @@ input,select,textarea{
   color:#fff;
 }
 button{
-  width:100%;
   margin-top:25px;
+  width:100%;
   padding:16px;
   background:linear-gradient(90deg,#d4af37,#f1d27a);
   border:none;
@@ -97,14 +99,14 @@ button{
 }
 
 /* MAP */
-.map-box iframe{
+.map iframe{
   width:100%;
   height:350px;
   border:2px solid rgba(212,175,55,.4);
 }
 
 /* FLOATING BUTTONS */
-.whatsapp-btn,.call-btn{
+.whatsapp,.call{
   position:fixed;
   right:18px;
   padding:14px 18px;
@@ -113,13 +115,13 @@ button{
   text-decoration:none;
   font-weight:700;
 }
-.whatsapp-btn{bottom:90px;background:#25d366;}
-.call-btn{bottom:30px;background:#2563eb;}
+.whatsapp{bottom:90px;background:#25d366}
+.call{bottom:30px;background:#2563eb}
 
 footer{
+  background:#000;
   text-align:center;
   padding:20px;
-  background:#000;
   color:#aaa;
 }
 </style>
@@ -129,62 +131,64 @@ footer{
 
 <div class="hero"></div>
 
-<div class="info-section">
+<div class="info">
 <h2>High Quality Doors & Installation</h2>
 <p>Security doors, Turkey doors, panel doors, stainless doors, glass doors and professional installation.</p>
 </div>
 
-<!-- SLIDER LEFT -->
-<div class="slider">
-  <div class="track">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0031.jpg">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0032.jpg">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0033.jpg">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0034.jpg">
-  </div>
+<!-- STATIC IMAGES -->
+<div class="gallery">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0031.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0032.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0033.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0034.jpg">
 </div>
 
-<!-- SLIDER RIGHT -->
-<div class="slider">
-  <div class="track reverse">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0035.jpg">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0036.jpg">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0037.jpg">
-    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0038.jpg">
-  </div>
+<!-- ONLY TWO MOVING -->
+<div class="moving-wrap">
+<div class="moving-track">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0035.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0036.jpg">
+</div>
 </div>
 
 <!-- MAP -->
-<div class="map-box">
+<div class="map">
 <iframe src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"></iframe>
 </div>
 
 <!-- FORM -->
 <div class="form-box">
 <h2>Booking & Order Form</h2>
-<form onsubmit="sendToWhatsApp();return false;">
-<input id="name" placeholder="Name">
-<input id="phone" placeholder="Phone">
+<form onsubmit="send();return false;">
+<input id="name" placeholder="Your Name">
+<input id="phone" placeholder="Phone Number">
 <select id="door">
 <option>Security Door</option>
 <option>Turkey Door</option>
 <option>Panel Door</option>
 <option>Glass Door</option>
 </select>
-<select id="delivery"><option>Delivery: Yes</option><option>No Delivery</option></select>
-<select id="install"><option>Installation: Yes</option><option>No Installation</option></select>
+<select id="delivery">
+<option>Delivery Required</option>
+<option>No Delivery</option>
+</select>
+<select id="install">
+<option>Installation Required</option>
+<option>No Installation</option>
+</select>
 <button>Submit via WhatsApp</button>
 </form>
 </div>
 
 <footer>© 2026 Ikeh Ikeh Doors</footer>
 
-<a class="whatsapp-btn" href="https://wa.me/2349038800388">WhatsApp</a>
-<a class="call-btn" href="tel:08111539390">Call</a>
+<a class="whatsapp" href="https://wa.me/2349038800388">WhatsApp</a>
+<a class="call" href="tel:08111539390">Call</a>
 
 <script>
-function sendToWhatsApp(){
-const msg=`Name:${name.value}%0APhone:${phone.value}%0ADoor:${door.value}`;
+function send(){
+const msg=`Name:${name.value}%0APhone:${phone.value}%0ADoor:${door.value}%0ADelivery:${delivery.value}%0AInstallation:${install.value}`;
 window.open("https://wa.me/2349038800388?text="+msg,"_blank");
 }
 </script>
