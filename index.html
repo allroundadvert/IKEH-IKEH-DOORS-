@@ -178,16 +178,16 @@ footer{
 <iframe src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"></iframe>
 </div>
 
-<!-- FORM WITH SPECIFICATIONS -->
+<!-- FORM WITH SPECIFICATIONS AND ADDRESS -->
 <div class="form-box">
 <h2>Booking & Order Form</h2>
 <form onsubmit="send();return false;">
 
 <label>Customer Name</label>
-<input id="name" placeholder="Full Name">
+<input id="customerName" placeholder="Full Name">
 
 <label>Phone Number</label>
-<input id="phone" placeholder="Phone Number">
+<input id="customerPhone" placeholder="Phone Number">
 
 <label>Door Type</label>
 <select id="door">
@@ -200,7 +200,7 @@ footer{
 </select>
 
 <label>Specifications</label>
-<textarea id="specs" placeholder="Size, color, design preference, special request, etc"></textarea>
+<textarea id="specifications" placeholder="Size, color, design preference, special request, etc"></textarea>
 
 <label>Delivery</label>
 <select id="delivery">
@@ -214,6 +214,10 @@ footer{
 <option>No installation</option>
 </select>
 
+<!-- ✅ NEW FIELD: Customer Address -->
+<label>Customer Address</label>
+<input id="customerAddress" placeholder="Street / City / State">
+
 <button>Submit via WhatsApp</button>
 </form>
 </div>
@@ -225,14 +229,24 @@ footer{
 
 <script>
 function send(){
-const msg =
-`Name: ${name.value}%0A
-Phone: ${phone.value}%0A
-Door: ${door.value}%0A
-Specifications: ${specs.value}%0A
-Delivery: ${delivery.value}%0A
-Installation: ${install.value}`;
-window.open("https://wa.me/2349038800388?text="+msg,"_blank");
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
+  const door = document.getElementById("door").value;
+  const specs = document.getElementById("specifications").value;
+  const delivery = document.getElementById("delivery").value;
+  const install = document.getElementById("install").value;
+  const address = document.getElementById("customerAddress").value;
+
+  const msg =
+`Name: ${name}
+Phone: ${phone}
+Door: ${door}
+Specifications: ${specs}
+Delivery: ${delivery}
+Installation: ${install}
+Address: ${address}`;
+
+  window.open("https://wa.me/2349038800388?text="+encodeURIComponent(msg), "_blank");
 }
 </script>
 
