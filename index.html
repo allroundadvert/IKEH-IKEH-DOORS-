@@ -55,7 +55,6 @@ body{
 }
 .moving-track{
   display:flex;
-  width:fit-content;
   animation:slide 18s ease-in-out infinite alternate;
 }
 .moving-track img{
@@ -79,14 +78,27 @@ body{
   border:1px solid rgba(212,175,55,.5);
   background:#050505;
 }
-.form-box h2{color:var(--gold);text-align:center}
-label{display:block;margin-top:15px}
-input,select{
+.form-box h2{
+  color:var(--gold);
+  text-align:center;
+  margin-bottom:15px;
+}
+label{
+  display:block;
+  margin-top:15px;
+  font-weight:600;
+}
+input,select,textarea{
   width:100%;
   padding:12px;
+  margin-top:6px;
   background:#0c0c0c;
   border:1px solid #333;
   color:#fff;
+}
+textarea{
+  min-height:100px;
+  resize:vertical;
 }
 button{
   margin-top:25px;
@@ -96,6 +108,7 @@ button{
   border:none;
   font-size:18px;
   font-weight:800;
+  cursor:pointer;
 }
 
 /* MAP */
@@ -157,26 +170,42 @@ footer{
 <iframe src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"></iframe>
 </div>
 
-<!-- FORM -->
+<!-- FORM WITH SPECIFICATIONS -->
 <div class="form-box">
 <h2>Booking & Order Form</h2>
 <form onsubmit="send();return false;">
-<input id="name" placeholder="Your Name">
+
+<label>Customer Name</label>
+<input id="name" placeholder="Full Name">
+
+<label>Phone Number</label>
 <input id="phone" placeholder="Phone Number">
+
+<label>Door Type</label>
 <select id="door">
 <option>Security Door</option>
 <option>Turkey Door</option>
 <option>Panel Door</option>
+<option>Stainless Door</option>
 <option>Glass Door</option>
+<option>Other</option>
 </select>
+
+<label>Specifications</label>
+<textarea id="specs" placeholder="Size, color, design preference, special request, etc"></textarea>
+
+<label>Delivery</label>
 <select id="delivery">
-<option>Delivery Required</option>
-<option>No Delivery</option>
+<option>Yes, I want delivery</option>
+<option>No delivery</option>
 </select>
+
+<label>Installation</label>
 <select id="install">
-<option>Installation Required</option>
-<option>No Installation</option>
+<option>Yes, installation needed</option>
+<option>No installation</option>
 </select>
+
 <button>Submit via WhatsApp</button>
 </form>
 </div>
@@ -188,7 +217,13 @@ footer{
 
 <script>
 function send(){
-const msg=`Name:${name.value}%0APhone:${phone.value}%0ADoor:${door.value}%0ADelivery:${delivery.value}%0AInstallation:${install.value}`;
+const msg =
+`Name: ${name.value}%0A
+Phone: ${phone.value}%0A
+Door: ${door.value}%0A
+Specifications: ${specs.value}%0A
+Delivery: ${delivery.value}%0A
+Installation: ${install.value}`;
 window.open("https://wa.me/2349038800388?text="+msg,"_blank");
 }
 </script>
