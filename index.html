@@ -9,80 +9,98 @@
 body{
   margin:0;
   font-family:Segoe UI, Arial, sans-serif;
-  background:#0c0c0c;
-  color:#f2f2f2;
+  background:#0a0a0a;
+  color:#f5f5f5;
+}
+:root{
+  --gold:#d4af37;
 }
 
-/* HERO IMAGE */
+/* HERO */
 .hero{
   width:100%;
-  height:300px;
-  background:url('https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/9fa2858be11307f390e137948ab9a366568fd4c7/.github/workflows/1772529239762.png') center center / cover no-repeat;
-  border-bottom:4px solid #d4af37;
+  height:320px;
+  background:url('https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/9fa2858be11307f390e137948ab9a366568fd4c7/.github/workflows/1772529239762.png') center/cover no-repeat;
+  border-bottom:4px solid var(--gold);
 }
 
-/* INFO SECTION */
+/* INFO */
 .info-section{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
   padding:30px 20px;
   text-align:center;
-  line-height:1.7;
 }
-.info-section h2{
-  color:#d4af37;
-  margin-bottom:10px;
+.info-section h2{color:var(--gold);}
+
+/* MOVING GALLERY */
+.slider{
+  overflow:hidden;
+  max-width:1100px;
+  margin:30px auto;
+  border-top:1px solid rgba(212,175,55,.4);
+  border-bottom:1px solid rgba(212,175,55,.4);
+}
+.track{
+  display:flex;
+  width:max-content;
+  animation:moveLeft 35s linear infinite;
+}
+.track.reverse{
+  animation:moveRight 35s linear infinite;
+}
+.track img{
+  width:260px;
+  height:220px;
+  object-fit:cover;
+  margin:10px;
+  border:2px solid rgba(212,175,55,.6);
+  border-radius:6px;
+  box-shadow:0 0 12px rgba(212,175,55,.25);
 }
 
-/* MAP */
-.map-box{
-  max-width:1000px;
-  margin:30px auto;
-  padding:0 20px;
+/* ANIMATIONS */
+@keyframes moveLeft{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
-.map-box iframe{
-  width:100%;
-  height:350px;
-  border:2px solid rgba(212,175,55,.4);
+@keyframes moveRight{
+  from{transform:translateX(-50%);}
+  to{transform:translateX(0);}
 }
 
 /* FORM */
 .form-box{
-  max-width:720px;
-  margin:40px auto 60px;
+  max-width:750px;
+  margin:50px auto;
   padding:30px;
-  border:1px solid rgba(212,175,55,.4);
+  border:1px solid rgba(212,175,55,.5);
   background:#050505;
 }
-.form-box h2{
-  color:#d4af37;
-  margin-top:0;
-  text-align:center;
-}
-label{
-  display:block;
-  margin-top:16px;
-  font-weight:600;
-}
-input, select, textarea{
+.form-box h2{color:var(--gold);text-align:center;}
+label{display:block;margin-top:15px;}
+input,select,textarea{
   width:100%;
   padding:12px;
-  margin-top:6px;
   background:#0c0c0c;
   border:1px solid #333;
   color:#fff;
 }
-textarea{ min-height:90px; }
-
 button{
   width:100%;
   margin-top:25px;
   padding:16px;
-  background:linear-gradient(90deg,#d4af37,#ffd966);
+  background:linear-gradient(90deg,#d4af37,#f1d27a);
   border:none;
   font-size:18px;
   font-weight:800;
-  cursor:pointer;
+}
+
+/* MAP */
+.map-box iframe{
+  width:100%;
+  height:350px;
+  border:2px solid rgba(212,175,55,.4);
 }
 
 /* FLOATING BUTTONS */
@@ -91,21 +109,13 @@ button{
   right:18px;
   padding:14px 18px;
   border-radius:40px;
-  font-weight:700;
   color:#fff;
   text-decoration:none;
-  z-index:999;
+  font-weight:700;
 }
-.whatsapp-btn{
-  bottom:90px;
-  background:#25d366;
-}
-.call-btn{
-  bottom:30px;
-  background:#2563eb;
-}
+.whatsapp-btn{bottom:90px;background:#25d366;}
+.call-btn{bottom:30px;background:#2563eb;}
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
@@ -117,108 +127,65 @@ footer{
 
 <body>
 
-<!-- TOP HERO IMAGE -->
 <div class="hero"></div>
 
 <div class="info-section">
-  <h2>Our Products & Services</h2>
-  <p>
-    We sell and install high quality doors including security doors, Turkey doors,
-    panel doors, stainless doors, glass doors, and professional installation services.
-  </p>
-
-  <h2>Our Address</h2>
-  <p>
-    <strong>Show Room:</strong> Block 1, Shop 201–220<br>
-    Ultra Modern Market,<br>
-    By Ezeniyi Junction,<br>
-    Benin–Onitsha Express Road,<br>
-    Asaba, Delta State.
-  </p>
+<h2>High Quality Doors & Installation</h2>
+<p>Security doors, Turkey doors, panel doors, stainless doors, glass doors and professional installation.</p>
 </div>
 
-<!-- GOOGLE MAP -->
+<!-- SLIDER LEFT -->
+<div class="slider">
+  <div class="track">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0031.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0032.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0033.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0034.jpg">
+  </div>
+</div>
+
+<!-- SLIDER RIGHT -->
+<div class="slider">
+  <div class="track reverse">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0035.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0036.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0037.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0038.jpg">
+  </div>
+</div>
+
+<!-- MAP -->
 <div class="map-box">
-  <iframe
-    src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"
-    loading="lazy">
-  </iframe>
+<iframe src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"></iframe>
 </div>
 
-<!-- CUSTOMER & INSTALLATION FORM -->
+<!-- FORM -->
 <div class="form-box">
-  <h2>Door Request & Installation Booking</h2>
-
-  <form onsubmit="sendToWhatsApp(); return false;">
-
-    <label>Customer Name</label>
-    <input id="name">
-
-    <label>Phone Number</label>
-    <input id="phone">
-
-    <label>Select Door Type</label>
-    <select id="door">
-      <option>Security Door</option>
-      <option>Turkey Door</option>
-      <option>Panel Door</option>
-      <option>Stainless Door</option>
-      <option>Glass Door</option>
-      <option>Other</option>
-    </select>
-
-    <label>Delivery Needed?</label>
-    <select id="delivery">
-      <option>Yes, deliver to me</option>
-      <option>No, I will pick up</option>
-    </select>
-
-    <label>Do You Need Installation?</label>
-    <select id="install">
-      <option>Yes, I need installation</option>
-      <option>No, not needed</option>
-    </select>
-
-    <label>Preferred Installation Date</label>
-    <input id="date" type="date">
-
-    <label>Preferred Time</label>
-    <select id="time">
-      <option>Morning</option>
-      <option>Afternoon</option>
-      <option>Evening</option>
-    </select>
-
-    <label>Additional Information</label>
-    <textarea id="info"></textarea>
-
-    <button>SUBMIT & CHAT ON WHATSAPP</button>
-
-  </form>
+<h2>Booking & Order Form</h2>
+<form onsubmit="sendToWhatsApp();return false;">
+<input id="name" placeholder="Name">
+<input id="phone" placeholder="Phone">
+<select id="door">
+<option>Security Door</option>
+<option>Turkey Door</option>
+<option>Panel Door</option>
+<option>Glass Door</option>
+</select>
+<select id="delivery"><option>Delivery: Yes</option><option>No Delivery</option></select>
+<select id="install"><option>Installation: Yes</option><option>No Installation</option></select>
+<button>Submit via WhatsApp</button>
+</form>
 </div>
 
-<footer>
-© 2026 Ikeh Ikeh Doors
-</footer>
+<footer>© 2026 Ikeh Ikeh Doors</footer>
 
-<!-- FLOATING BUTTONS -->
-<a class="whatsapp-btn" href="https://wa.me/2349038800388" target="_blank">WhatsApp</a>
+<a class="whatsapp-btn" href="https://wa.me/2349038800388">WhatsApp</a>
 <a class="call-btn" href="tel:08111539390">Call</a>
 
 <script>
 function sendToWhatsApp(){
-  const msg =
-    "Hello Ikeh Ikeh Doors,%0A%0A"+
-    "Name: "+name.value+"%0A"+
-    "Phone: "+phone.value+"%0A"+
-    "Door Type: "+door.value+"%0A"+
-    "Delivery: "+delivery.value+"%0A"+
-    "Installation: "+install.value+"%0A"+
-    "Preferred Date: "+date.value+"%0A"+
-    "Preferred Time: "+time.value+"%0A"+
-    "Additional Info: "+info.value;
-
-  window.open("https://wa.me/2349038800388?text="+msg,"_blank");
+const msg=`Name:${name.value}%0APhone:${phone.value}%0ADoor:${door.value}`;
+window.open("https://wa.me/2349038800388?text="+msg,"_blank");
 }
 </script>
 
