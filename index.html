@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ikeh Ikeh Doors</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#0c0c0c;
+  color:#f2f2f2;
+}
+
+/* HEADER */
+.header-text{
+  text-align:center;
+  padding:30px 15px 20px;
+}
+.header-text h1{
+  margin:0;
+  color:#d4af37;
+  font-size:38px;
+  font-weight:900;
+}
+.header-text p{
+  margin:10px 0 0;
+  color:#ccc;
+  font-size:18px;
+}
+
+/* INFO SECTION */
+.info-section{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+  text-align:center;
+  line-height:1.7;
+}
+.info-section h2{
+  color:#d4af37;
+  margin-bottom:10px;
+}
+
+/* MAP */
+.map-box{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px;
+}
+.map-box iframe{
+  width:100%;
+  height:350px;
+  border:2px solid rgba(212,175,55,.4);
+}
+
+/* FORM */
+.form-box{
+  max-width:720px;
+  margin:40px auto 60px;
+  padding:30px;
+  border:1px solid rgba(212,175,55,.4);
+  background:#050505;
+}
+.form-box h2{
+  color:#d4af37;
+  margin-top:0;
+  text-align:center;
+}
+label{
+  display:block;
+  margin-top:16px;
+  font-weight:600;
+}
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  background:#0c0c0c;
+  border:1px solid #333;
+  color:#fff;
+}
+textarea{ min-height:90px; }
+
+button{
+  width:100%;
+  margin-top:25px;
+  padding:16px;
+  background:linear-gradient(90deg,#d4af37,#ffd966);
+  border:none;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* FLOATING BUTTONS */
+.whatsapp-btn,.call-btn{
+  position:fixed;
+  right:18px;
+  padding:14px 18px;
+  border-radius:40px;
+  font-weight:700;
+  color:#fff;
+  text-decoration:none;
+  z-index:999;
+}
+.whatsapp-btn{
+  bottom:90px;
+  background:#25d366;
+}
+.call-btn{
+  bottom:30px;
+  background:#2563eb;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header-text">
+  <h1>Ikeh Ikeh Doors</h1>
+  <p>For High Quality Doors of All Kinds</p>
+</div>
+
+<div class="info-section">
+  <h2>Our Products & Services</h2>
+  <p>
+    We sell and install high quality doors including security doors, Turkey doors,
+    panel doors, stainless doors, glass doors, and professional installation services.
+  </p>
+
+  <h2>Our Address</h2>
+  <p>
+    <strong>Show Room:</strong> Block 1, Shop 201–220<br>
+    Ultra Modern Market,<br>
+    By Ezeniyi Junction,<br>
+    Benin–Onitsha Express Road,<br>
+    Asaba, Delta State.
+  </p>
+</div>
+
+<!-- GOOGLE MAP -->
+<div class="map-box">
+<iframe
+  src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+
+<!-- CUSTOMER & INSTALLATION FORM -->
+<div class="form-box">
+  <h2>Door Request & Installation Booking</h2>
+
+  <form onsubmit="sendToWhatsApp(); return false;">
+
+    <label>Customer Name</label>
+    <input id="name" placeholder="Full Name">
+
+    <label>Phone Number</label>
+    <input id="phone" placeholder="Phone Number">
+
+    <label>Select Door Type</label>
+    <select id="door">
+      <option>Security Door</option>
+      <option>Turkey Door</option>
+      <option>Panel Door</option>
+      <option>Stainless Door</option>
+      <option>Glass Door</option>
+      <option>Other</option>
+    </select>
+
+    <label>Delivery Needed?</label>
+    <select id="delivery">
+      <option>Yes, deliver to me</option>
+      <option>No, I will pick up</option>
+    </select>
+
+    <label>Do You Need Installation?</label>
+    <select id="install">
+      <option>Yes, I need installation</option>
+      <option>No, not needed</option>
+    </select>
+
+    <label>Preferred Installation Date</label>
+    <input id="date" type="date">
+
+    <label>Preferred Time</label>
+    <select id="time">
+      <option>Morning</option>
+      <option>Afternoon</option>
+      <option>Evening</option>
+    </select>
+
+    <label>Additional Information</label>
+    <textarea id="info" placeholder="Door size, quantity, location, or special instructions"></textarea>
+
+    <button>SUBMIT & CHAT ON WHATSAPP</button>
+
+  </form>
+</div>
+
+<footer>
+© 2026 Ikeh Ikeh Doors
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-btn" href="https://wa.me/2349038800388" target="_blank">WhatsApp</a>
+<a class="call-btn" href="tel:08111539390">Call</a>
+
+<script>
+function sendToWhatsApp(){
+  const msg =
+    "Hello Ikeh Ikeh Doors,%0A%0A"+
+    "Name: "+name.value+"%0A"+
+    "Phone: "+phone.value+"%0A"+
+    "Door Type: "+door.value+"%0A"+
+    "Delivery: "+delivery.value+"%0A"+
+    "Installation: "+install.value+"%0A"+
+    "Preferred Date: "+date.value+"%0A"+
+    "Preferred Time: "+time.value+"%0A"+
+    "Additional Info: "+info.value;
+
+  window.open("https://wa.me/2349038800388?text="+msg,"_blank");
+}
+</script>
+
+</body>
+</html>
