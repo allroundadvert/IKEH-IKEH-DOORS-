@@ -13,10 +13,18 @@ body{
   color:#f2f2f2;
 }
 
-/* HEADER */
+/* HERO IMAGE */
+.hero{
+  width:100%;
+  height:300px;
+  background:url('https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/9fa2858be11307f390e137948ab9a366568fd4c7/.github/workflows/1772529239762.png') center center / cover no-repeat;
+  border-bottom:4px solid #d4af37;
+}
+
+/* HEADER TEXT */
 .header-text{
   text-align:center;
-  padding:30px 15px 20px;
+  padding:25px 15px 20px;
 }
 .header-text h1{
   margin:0;
@@ -40,7 +48,6 @@ body{
 }
 .info-section h2{
   color:#d4af37;
-  margin-bottom:10px;
 }
 
 /* MAP */
@@ -126,6 +133,9 @@ footer{
 
 <body>
 
+<!-- TOP HERO IMAGE -->
+<div class="hero"></div>
+
 <div class="header-text">
   <h1>Ikeh Ikeh Doors</h1>
   <p>For High Quality Doors of All Kinds</p>
@@ -150,11 +160,10 @@ footer{
 
 <!-- GOOGLE MAP -->
 <div class="map-box">
-<iframe
-  src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+  <iframe
+    src="https://www.google.com/maps?q=Ultra+Modern+Market+Asaba+Delta+State&output=embed"
+    loading="lazy">
+  </iframe>
 </div>
 
 <!-- CUSTOMER & INSTALLATION FORM -->
@@ -164,10 +173,10 @@ footer{
   <form onsubmit="sendToWhatsApp(); return false;">
 
     <label>Customer Name</label>
-    <input id="name" placeholder="Full Name">
+    <input id="name">
 
     <label>Phone Number</label>
-    <input id="phone" placeholder="Phone Number">
+    <input id="phone">
 
     <label>Select Door Type</label>
     <select id="door">
@@ -202,7 +211,7 @@ footer{
     </select>
 
     <label>Additional Information</label>
-    <textarea id="info" placeholder="Door size, quantity, location, or special instructions"></textarea>
+    <textarea id="info"></textarea>
 
     <button>SUBMIT & CHAT ON WHATSAPP</button>
 
